@@ -3,7 +3,7 @@ package com.example.cardsagainsthumanity;
 public class Player {
 
     private String name = "Default Name";
-    private int turn = 1;
+    private int turn = 0;
     private int nCards = 0;
     private boolean myTurn = false;
     private int score = 0;
