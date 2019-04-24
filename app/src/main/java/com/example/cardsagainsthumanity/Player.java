@@ -15,13 +15,19 @@ public class Player {
 
     public Player (){
         playerList.add(this);
-        this.turn = this.playerList.indexOf(this);
         this.name = name + " " + this.turn;
+        setInitialTurn();
     }
     //overload
 
     public Player(String name){
         this.name = name;
+        setInitialTurn();
+    }
+
+
+    private void setInitialTurn(){
+        this.turn = this.playerList.size();
     }
 
     //Getters
@@ -31,6 +37,10 @@ public class Player {
 
     public int getnCards() {
         return nCards;
+    }
+
+    public int getTurn () {
+        return turn;
     }
 
     public boolean isMyTurn() {
