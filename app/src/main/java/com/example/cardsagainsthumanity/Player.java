@@ -1,17 +1,25 @@
 package com.example.cardsagainsthumanity;
 
+import java.util.ArrayList;
+
 public class Player {
 
     private String name = "Default Name";
-    private int turn = 1;
+    private int turn = 0;
     private int nCards = 0;
     private boolean myTurn = false;
     private int score = 0;
     private boolean master = false;
 
-    public Player (){ }
+   ArrayList<Player> playerList = new ArrayList<Player>();
 
+    public Player (){
+        playerList.add(this);
+        this.turn = this.playerList.indexOf(this);
+        this.name = name + " " + this.turn;
+    }
     //overload
+
     public Player(String name){
         this.name = name;
     }
@@ -39,6 +47,6 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Name: "+name+" "+turn+"\nNumber of cards: "+nCards+"\nScore: "+score;
+        return "Name: "+name+"\nNumber of cards: "+nCards+"\nScore: "+score;
     }
 }
