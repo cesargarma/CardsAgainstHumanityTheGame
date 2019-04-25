@@ -11,23 +11,18 @@ public class Player {
     private int score = 0;
     private boolean master = false;
 
-   ArrayList<Player> playerList = new ArrayList<Player>();
 
-    public Player (){
-        playerList.add(this);
-        this.name = name + " " + this.turn;
-        setInitialTurn();
-    }
+
+    public Player (){ }
     //overload
-
     public Player(String name){
         this.name = name;
-        setInitialTurn();
     }
 
-
-    private void setInitialTurn(){
-        this.turn = this.playerList.size();
+    //setters
+    public void setTurn(int turn) {
+        this.turn = turn;
+        this.name = name + " " + this.turn;
     }
 
     //Getters
