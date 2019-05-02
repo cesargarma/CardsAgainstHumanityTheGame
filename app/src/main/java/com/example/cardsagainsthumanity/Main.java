@@ -1,6 +1,7 @@
 package com.example.cardsagainsthumanity;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -21,6 +22,8 @@ public class Main {
 
     public static void playerCraft(int nPlayers, Scanner teclado, int nCards){
         Player [] players = new Player[nPlayers];
+        Random random = new Random();
+        int rng = random.nextInt(nPlayers);
         for (int i = 0; i < nPlayers; i++) {
             System.out.print("Nombre jugador "+(i+1)+": ");
             String name = teclado.nextLine();
@@ -30,7 +33,10 @@ public class Main {
                 players[i] = new Player(name, nCards);
             }
             players[i].setTurn(i);
+        }
+        players[rng].setMaster();
 
+        for (int i = 0; i < players.length; i++){
             System.out.println(players[i]);
         }
     }

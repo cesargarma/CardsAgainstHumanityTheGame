@@ -59,8 +59,12 @@ public class Player {
         return master;
     }
 
+    public void setMaster(){
+        this.master = true;
+    }
+
     @Override
     public String toString() {
-        return "Name: "+name+"\nNumber of cards: "+nCards+"\nScore: "+score;
+        return "Name: "+name+"\nNumber of cards: "+nCards+"\nScore: "+score+"\nMaster: "+isMaster();
     }
 }
