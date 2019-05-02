@@ -19,6 +19,15 @@ public class Player {
         this.name = name;
     }
 
+    public Player(String name, int nCards){
+        this.name = name;
+        this.nCards = nCards;
+    }
+
+    public Player(int nCards){
+        this.nCards = nCards;
+    }
+
     //setters
     public void setTurn(int turn) {
         this.turn = turn;
