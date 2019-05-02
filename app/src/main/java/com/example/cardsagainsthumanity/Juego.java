@@ -19,10 +19,9 @@ public class Juego {
         playerCraft(nPlayers,teclado, nCards);
     }
 
-    public static void playerCraft(int nPlayers, Scanner teclado, int nCards){
+    private static void playerCraft(int nPlayers, Scanner teclado, int nCards){
         Player [] players = new Player[nPlayers];
-        Random random = new Random();
-        int rng = random.nextInt(nPlayers);
+        int rng = randomNumber(nPlayers);
         for (int i = 0; i < nPlayers; i++) {
             System.out.print("Nombre jugador "+(i+1)+": ");
             String name = teclado.nextLine();
@@ -38,5 +37,10 @@ public class Juego {
         for (int i = 0; i < players.length; i++){
             System.out.println(players[i]);
         }
+    }
+
+    private static int randomNumber(int rango){
+        Random random = new Random();
+        return random.nextInt(rango);
     }
 }
