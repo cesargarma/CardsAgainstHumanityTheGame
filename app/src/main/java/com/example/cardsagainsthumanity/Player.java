@@ -6,36 +6,46 @@ public class Player {
 
     //Nombre del jugador
     private String name = "Default Name";
+
     //Turno en el que juega el jugador
     private int turn = 0;
+
     //Número de cartas en mano
     private int nCards = 0;
+
     //Indica si es el turno del jugador,
     //Los master de cada turno, lo deben tener en FALSE todo ese turno
     private boolean myTurn = false;
+
     //Puntuacion de cada jugador, nº de rondas que ha ganado
     private int score = 0;
+
     //Indica si es el master de la ronda.
     private boolean master = false;
+
     //Valor de las cartas en mano del jugador
-    private String [] cards = new String[10];
+    private String[] cards = new String[10];
 
     ///////////////
     //CONSTRUCTOR//
     ///////////////
-    public Player (){ }
+
+    public Player() {
+    }
+
+
     //overload
-    public Player(String name){
+    public Player(String name) {
         this.name = name;
     }
 
-    public Player(String name, int nCards){
+    public Player(String name, int nCards) {
         this.name = name;
         this.nCards = nCards;
         this.cards = new String[nCards];
     }
 
-    public Player(int nCards){
+    public Player(int nCards) {
         this.nCards = nCards;
         this.cards = new String[nCards];
     }
@@ -43,24 +53,26 @@ public class Player {
     ///////////
     //SETTERS//
     ///////////
+
     public void setTurn(int turn) {
         this.turn = turn;
         this.name = name + " " + this.turn;
     }
 
-    public void setMaster(){
+    public void setMaster() {
         this.master = true;
     }
 
     //Le das una posicion (indica la posicion de la carta en el array de cartas en mano
     //y solicita una nueva carta para esa posicion.
-    public void setCards(int pos){
+    public void setCards(int pos) {
         this.cards[pos] = Cards.getWhiteCard();
     }
 
     ///////////
     //GETTERS//
     ///////////
+
     public String getName() {
         return name;
     }
@@ -69,7 +81,7 @@ public class Player {
         return nCards;
     }
 
-    public int getTurn () {
+    public int getTurn() {
         return turn;
     }
 
@@ -85,12 +97,12 @@ public class Player {
         return master;
     }
 
-    public String getCards(int pos){
+    public String getCards(int pos) {
         return this.cards[pos];
     }
 
     @Override
     public String toString() {
-        return "Name: "+name+"\nNumber of cards: "+nCards+"\nScore: "+score+"\nMaster: "+isMaster();
+        return "Name: " + name + "\nNumber of cards: " + nCards + "\nScore: " + score + "\nMaster: " + isMaster();
     }
 }
