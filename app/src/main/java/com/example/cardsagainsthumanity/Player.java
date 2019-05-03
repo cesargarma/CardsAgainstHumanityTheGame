@@ -4,15 +4,25 @@ import com.example.cardsagainsthumanity.Cards;
 
 public class Player {
 
+    //Nombre del jugador
     private String name = "Default Name";
+    //Turno en el que juega el jugador
     private int turn = 0;
+    //Número de cartas en mano
     private int nCards = 0;
+    //Indica si es el turno del jugador,
+    //Los master de cada turno, lo deben tener en FALSE todo ese turno
     private boolean myTurn = false;
+    //Puntuacion de cada jugador, nº de rondas que ha ganado
     private int score = 0;
+    //Indica si es el master de la ronda.
     private boolean master = false;
+    //Valor de las cartas en mano del jugador
     private String [] cards = new String[10];
 
-
+    ///////////////
+    //CONSTRUCTOR//
+    ///////////////
     public Player (){ }
     //overload
     public Player(String name){
@@ -30,7 +40,9 @@ public class Player {
         this.cards = new String[nCards];
     }
 
-    //setters
+    ///////////
+    //SETTERS//
+    ///////////
     public void setTurn(int turn) {
         this.turn = turn;
         this.name = name + " " + this.turn;
@@ -40,11 +52,15 @@ public class Player {
         this.master = true;
     }
 
+    //Le das una posicion (indica la posicion de la carta en el array de cartas en mano
+    //y solicita una nueva carta para esa posicion.
     public void setCards(int pos){
         this.cards[pos] = Cards.getWhiteCard();
     }
 
-    //Getters
+    ///////////
+    //GETTERS//
+    ///////////
     public String getName() {
         return name;
     }
