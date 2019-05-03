@@ -3,20 +3,20 @@ package com.example.cardsagainsthumanity;
 import java.util.Random;
 
 public class Cards {
-   private String[] white = {
+   private static String[] white = {
            "Aznar",
            "Monaguillos sin dientes",
            "Esmegma",
            "El KKK",
            "11-M",
            "11-S"};
-   private String[] white2 = new String[white.length];
+   private static String[] white2 = new String[white.length];
 
-   private String[] black = {
+   private static String[] black = {
            "La recuperación comenzó cuando me uní a un grupo de apoyo de _____",
            "Solo hay dos certezas en la vida: La muerte y _____",
-           "Amarte es facil, porque _____"};
-   private String[] black2 = new String[black.length];
+           "Amarte es facil, porque eres _____"};
+   private static String[] black2 = new String[black.length];
 
 
    public int getWhiteLength(){
@@ -27,14 +27,14 @@ public class Cards {
        return black.length;
    }
 
-   public String getWhiteCard(){
+   public static String getWhiteCard(){
         int rng = -1;
         do{
             rng = randomNumber(white.length);
-        }while(white[rng].equals(null));
+        }while(white[rng].equals(""));
 
         white2[rng] = white[rng];
-        white[rng] = null;
+        white[rng] = "";
         return white2[rng];
    }
 

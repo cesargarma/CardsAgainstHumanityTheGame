@@ -1,6 +1,6 @@
 package com.example.cardsagainsthumanity;
 
-import java.util.ArrayList;
+import com.example.cardsagainsthumanity.Cards;
 
 public class Player {
 
@@ -10,7 +10,7 @@ public class Player {
     private boolean myTurn = false;
     private int score = 0;
     private boolean master = false;
-
+    private String [] cards = new String[10];
 
 
     public Player (){ }
@@ -22,16 +22,26 @@ public class Player {
     public Player(String name, int nCards){
         this.name = name;
         this.nCards = nCards;
+        this.cards = new String[nCards];
     }
 
     public Player(int nCards){
         this.nCards = nCards;
+        this.cards = new String[nCards];
     }
 
     //setters
     public void setTurn(int turn) {
         this.turn = turn;
         this.name = name + " " + this.turn;
+    }
+
+    public void setMaster(){
+        this.master = true;
+    }
+
+    public void setCards(int pos){
+        this.cards[pos] = Cards.getWhiteCard();
     }
 
     //Getters
@@ -59,8 +69,8 @@ public class Player {
         return master;
     }
 
-    public void setMaster(){
-        this.master = true;
+    public String getCards(int pos){
+        return this.cards[pos];
     }
 
     @Override

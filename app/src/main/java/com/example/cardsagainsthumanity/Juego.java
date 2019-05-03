@@ -20,10 +20,25 @@ public class Juego {
         }while(nCards <= 0);
         playerCraft(nPlayers,teclado, nCards);
         repartirCartas(nCards);
+        mostrarCartasEnMano(nCards);
     }
 
     private static void repartirCartas(int nCards) {
+        for (int i = 0; i < nCards; i++){
+            for (int j = 0; j < players.length; j++) {
+                players[j].setCards(i);
+            }
+        }
+    }
 
+    public static void mostrarCartasEnMano(int nCards){
+        for (int i = 0; i < players.length; i++){
+            System.out.println();
+            System.out.println((i+1)+"º Jugador");
+            for (int j = 0; j < nCards; j++) {
+                System.out.println(players[i].getCards(j));
+            }
+        }
     }
 
     private static void playerCraft(int nPlayers, Scanner teclado, int nCards){
