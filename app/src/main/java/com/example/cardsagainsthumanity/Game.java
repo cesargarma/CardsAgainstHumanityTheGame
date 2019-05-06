@@ -73,9 +73,10 @@ public class Game {
         System.out.println("El ganador es: "+players[opcion].getName());
 
         players[opcion].setScore();
+        //Asignar nuevo master y quitar el rango del anterior no funciona
         players[opcion].setMaster();
 
-        players[lookForMaster()].setMaster();
+        players[lookForMaster()].setMasterFalse();
     }
 
     private static void mostrarDatos() {
