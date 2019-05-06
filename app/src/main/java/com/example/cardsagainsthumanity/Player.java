@@ -62,7 +62,7 @@ public class Player {
     }
 
     public void setMaster() {
-        this.master = true;
+        this.master = !this.master;
     }
 
     //Le das una posicion (indica la posicion de la carta en el array de cartas en mano
@@ -73,6 +73,10 @@ public class Player {
 
     public void setBlackCards() {
         this.blackCard = Cards.getBlackCard();
+    }
+
+    public void setScore(){
+        this.score++;
     }
 
     ///////////
