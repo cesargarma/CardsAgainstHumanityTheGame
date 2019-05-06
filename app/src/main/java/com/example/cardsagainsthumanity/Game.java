@@ -6,7 +6,7 @@ import static com.example.cardsagainsthumanity.GameInit.players;
 
 public class Game {
 
-    public static String[] whiteCards = new String[players.length];
+    public static String[] whiteCards = new String[players.length-1];
 
     public static void start(){
 
@@ -61,5 +61,8 @@ public class Game {
         for (int i = 0; i < whiteCards.length; i++) {
             System.out.println(i + "- "+ whiteCards[i]);
         }
+        Scanner teclado = new Scanner(System.in);
+        int opcion = Integer.parseInt(teclado.nextLine()) - 1;
+        System.out.println("Carta ganadora: "+whiteCards[opcion]);
     }
 }
