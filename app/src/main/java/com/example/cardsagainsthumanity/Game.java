@@ -34,6 +34,7 @@ public class Game {
 
     private static void chooseWhiteCard() {
         Scanner teclado = new Scanner(System.in);
+        int k = 0;
 
         for (int i = 0; i < players.length; i++) {
             if(!players[i].isMaster()){
@@ -51,19 +52,23 @@ public class Game {
 
                 System.out.println("Elegida la carta: "+players[i].getCards(opcion));
                 //El fallo está aquí
-                whiteCards[i] = players[i].getCards(opcion);
+                whiteCards[k++] = players[i].getCards(opcion);
             }
         }
     }
 
     private static void winner() {
         System.out.println("\n\nTurno del master: "+players[lookForMaster()].getName());
-        System.out.println("Elige la carta ganadora (1-"+whiteCards.length+"): ");
+        System.out.println("Carta negra: \n"+players[lookForMaster()].getBlackCard());
+        System.out.println("\n\nElige la carta ganadora (1-"+whiteCards.length+"): ");
         for (int i = 0; i < whiteCards.length; i++) {
-            System.out.println(i + "- "+ whiteCards[i]);
+            System.out.println((i+1) + "- "+ whiteCards[i]);
         }
         Scanner teclado = new Scanner(System.in);
         int opcion = Integer.parseInt(teclado.nextLine()) - 1;
         System.out.println("Carta ganadora: "+whiteCards[opcion]);
+
+        if(lookForMaster() <= opcion) opcion++;
+        System.out.println("El ganador es: "+players[opcion].getName());
     }
 }
