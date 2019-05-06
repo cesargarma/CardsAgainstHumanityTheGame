@@ -3,7 +3,7 @@ package com.example.cardsagainsthumanity;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Juego {
+public class GameInit {
     public static Player[] players = new Player[8];
 
     //Inicia el juego,
@@ -58,7 +58,7 @@ public class Juego {
     //Muestra las cartas en mano de cada jugador
     public static void mostrarCartasEnMano(int nCards) {
 
-        System.out.println("¡CARTAS DE CADA JUGADOR!");
+        System.out.print("\n\n¡CARTAS DE CADA JUGADOR!");
 
         for (int i = 0; i < players.length; i++) {
             System.out.println();
