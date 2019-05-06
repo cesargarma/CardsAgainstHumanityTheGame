@@ -50,6 +50,7 @@ public class Game {
                 int opcion = Integer.parseInt(teclado.nextLine()) - 1;
 
                 System.out.println("Elegida la carta: "+players[i].getCards(opcion));
+                //El fallo está aquí
                 whiteCards[i] = players[i].getCards(opcion);
             }
         }
