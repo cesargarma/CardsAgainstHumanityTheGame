@@ -5,9 +5,13 @@ import static com.example.cardsagainsthumanity.GameInit.players;
 public class Game {
 
     public static void start(){
-        int master = lookForMaster();
 
+        int master = lookForMaster();
         System.out.println("\n\nEl master de esta ronda es: "+players[master].getName());
+
+        players[master].setBlackCards();
+        System.out.println("Carta negra: \n"+players[master].getBlackCard());
+
     }
 
     private static int lookForMaster(){

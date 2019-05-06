@@ -26,6 +26,8 @@ public class Player {
     //Valor de las cartas en mano del jugador
     private String[] cards = new String[10];
 
+    private String blackCard = "";
+
     ///////////////
     //CONSTRUCTOR//
     ///////////////
@@ -69,6 +71,10 @@ public class Player {
         this.cards[pos] = Cards.getWhiteCard();
     }
 
+    public void setBlackCards() {
+        this.blackCard = Cards.getBlackCard();
+    }
+
     ///////////
     //GETTERS//
     ///////////
@@ -99,6 +105,10 @@ public class Player {
 
     public String getCards(int pos) {
         return this.cards[pos];
+    }
+
+    public String getBlackCard(){
+        return this.blackCard;
     }
 
     @Override

@@ -38,13 +38,13 @@ public class Cards {
         return white2[rng];
    }
 
-   public String getBlackCard(){
+   public static String getBlackCard(){
        int rng = -1;
        do{
            rng = randomNumber(black.length);
-       }while(black[rng].equals(null));
+       }while(black[rng].equals(""));
        black2[rng] = black[rng];
-       black[rng] = null;
+       black[rng] = "";
        return black2[rng];
    }
 
