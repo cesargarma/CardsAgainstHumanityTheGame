@@ -4,7 +4,9 @@ public class Main {
     public static void main(String[] args) {
         //Te gusta mas así el main, Asti?
         GameInit.iniciarjuego();
-        Game.start();
+        for (int i = 0; i < 3; i++) {
+            Game.start();
+        }
     }
 
 

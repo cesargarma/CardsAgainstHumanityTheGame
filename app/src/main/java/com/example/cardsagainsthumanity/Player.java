@@ -115,6 +115,10 @@ public class Player {
         return this.cards[pos];
     }
 
+    public int getnCardsOnHand(){
+        return this.cards.length;
+    }
+
     public String getBlackCard(){
         return this.blackCard;
     }

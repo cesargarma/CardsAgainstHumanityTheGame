@@ -52,8 +52,8 @@ public class Game {
                 int opcion = Integer.parseInt(teclado.nextLine()) - 1;
 
                 System.out.println("Elegida la carta: "+players[i].getCards(opcion));
-                //El fallo está aquí
                 whiteCards[k++] = players[i].getCards(opcion);
+                players[i].setCards(opcion);
             }
         }
     }
@@ -73,7 +73,8 @@ public class Game {
         System.out.println("El ganador es: "+players[opcion].getName());
 
         players[opcion].setScore();
-        //Asignar nuevo master y quitar el rango del anterior no funciona
+        //Sigue sin cambiar el rango de master
+        //aun no se pq
         players[opcion].setMaster();
 
         players[lookForMaster()].setMasterFalse();

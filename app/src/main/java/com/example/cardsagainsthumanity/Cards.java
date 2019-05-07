@@ -4,12 +4,15 @@ import java.util.Random;
 
 public class Cards {
    private static String[] white = {
-           "Aznar",
-           "Monaguillos sin dientes",
-           "Esmegma",
-           "El KKK",
-           "11-M",
-           "11-S"};
+            "Aznar",
+            "Monaguillos sin dientes",
+            "Esmegma",
+            "El KKK",
+            "11-M",
+            "11-S",
+            "Una piscina llena de bebés muertos",
+            "Cosas nazis",
+            "Cards Against Humanity"};
    private static String[] white2 = new String[white.length];
 
    private static String[] black = {
