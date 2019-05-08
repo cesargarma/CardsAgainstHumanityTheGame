@@ -45,7 +45,7 @@ public class Game {
 
 
                 for (int j = 0; j < players[i].getnCards(); j++) {
-                    System.out.println(players[i].getCards(j));
+                    System.out.println((j+1) +"- "+players[i].getCards(j));
                 }
 
                 System.out.println("Elige una carta (1-"+players[i].getnCards()+")");
@@ -72,12 +72,11 @@ public class Game {
         if(lookForMaster() <= opcion) opcion++;
         System.out.println("El ganador es: "+players[opcion].getName());
 
+        players[lookForMaster()].setMasterFalse();
+
         players[opcion].setScore();
-        //Sigue sin cambiar el rango de master
-        //aun no se pq
         players[opcion].setMaster();
 
-        players[lookForMaster()].setMasterFalse();
     }
 
     private static void mostrarDatos() {
