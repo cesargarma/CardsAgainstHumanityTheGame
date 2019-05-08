@@ -12,13 +12,24 @@ public class Cards {
             "11-S",
             "Una piscina llena de bebés muertos",
             "Cosas nazis",
-            "Cards Against Humanity"};
+            "Cards Against Humanity",
+            "Vin Diesel",
+            "Lesbianas nazis borrachas que dan palizas",
+            "Notre Dame on fire",
+            "Un trabajo penoso",
+            "Despertarse medio desnudo en el parking del Burguer King",
+            "Esclavitud",
+            "Una orgía en la que una persona tiene sida",
+            "Su Majestad la Reina Isabel II"};
+
    private static String[] white2 = new String[white.length];
 
    private static String[] black = {
-           "La recuperación comenzó cuando me uní a un grupo de apoyo de _____",
-           "Solo hay dos certezas en la vida: La muerte y _____",
-           "Amarte es facil, porque eres _____"};
+            "La recuperación comenzó cuando me uní a un grupo de apoyo de _____",
+            "Solo hay dos certezas en la vida: La muerte y _____",
+            "Amarte es facil, porque eres _____",
+            "La vida de los indios americanos cambió cuando los colonizadores introdujeron _____"};
+
    private static String[] black2 = new String[black.length];
 
 
