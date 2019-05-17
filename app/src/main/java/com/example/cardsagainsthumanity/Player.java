@@ -5,7 +5,7 @@ import com.example.cardsagainsthumanity.Cards;
 public class Player {
 
     //Nombre del jugador
-    private String name = "Default Name";
+    private String name = "Player";
 
     //Turno en el que juega el jugador
     private int turn = 0;
