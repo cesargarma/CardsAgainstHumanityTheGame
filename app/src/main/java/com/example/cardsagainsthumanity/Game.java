@@ -100,7 +100,7 @@ public class Game {
 
 
         //ajusta el rol de master y entrega el punto al ganador
-        players[lookForMaster()].setMasterFalse();
+        players[lookForMaster()].setMaster();
 
         players[opcion].setScore();
         players[opcion].setMaster();
@@ -113,5 +113,17 @@ public class Game {
             System.out.println(players[i]);
             System.out.println();
         }
+    }
+
+    public static String getGanador(){
+        int score = players[0].getScore();
+        int temp = 0;
+        for (int i = 1; i < players.length; i++) {
+            if(players[i].getScore()>score){
+                score = players[i].getScore();
+                temp = i;
+            }
+        }
+        return players[temp].getName();
     }
 }

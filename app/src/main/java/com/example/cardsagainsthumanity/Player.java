@@ -62,12 +62,12 @@ public class Player {
     }
 
     public void setMaster() {
-        this.master = true;
+        this.master = !this.master;
     }
 
-    public void setMasterFalse(){
+   /* public void setMasterFalse(){
         this.master = false;
-    }
+    }*/
 
     //Le das una posicion (indica la posicion de la carta en el array de cartas en mano
     //y solicita una nueva carta para esa posicion.

@@ -7,6 +7,7 @@ public class Main {
         for (int i = 0; i < 3; i++) {
             Game.start();
         }
+        System.out.println("\n\nEl ganador es: "+Game.getGanador().toUpperCase());
         System.out.println("\n\n\n¡¡¡¡FIN DEL JUEGO!!!!");
     }
 }
