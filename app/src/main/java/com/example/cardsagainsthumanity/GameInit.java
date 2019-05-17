@@ -18,8 +18,16 @@ public class GameInit {
 
         //Solicita el numero de jugadores a jugar, un minimo de 3 y un maximo de 8
         do {
-            System.out.println("¿Cuántos jugadores van a jugar? \nMáximo de 8 jugadores, mínimo 3.");
-            nPlayers = Integer.parseInt(teclado.nextLine());
+            try{
+                System.out.println("¿Cuántos jugadores van a jugar? \nMáximo de 8 jugadores, mínimo 3.");
+                nPlayers = Integer.parseInt(teclado.nextLine());
+                if(nPlayers < 3 || nPlayers > 8) throw new Exception("El número introducido no es válido.");
+            }catch(NumberFormatException e){
+                System.out.println("ERROR: Se debe de introducir un número");
+            }catch(Exception e){
+                System.out.println("ERROR: "+e.getMessage());
+            }
+
 
         } while (nPlayers < 3 || nPlayers > 8);
 
@@ -27,9 +35,12 @@ public class GameInit {
         //el minimo es 0 y no hay limite maximo
 
         do {
-            System.out.println("¿Cuántas cartas por jugador?");
-            nCards = Integer.parseInt(teclado.nextLine());
-
+            try{
+                System.out.println("¿Cuántas cartas por jugador?");
+                nCards = Integer.parseInt(teclado.nextLine());
+            }catch(NumberFormatException e){
+                System.out.println("ERROR: Se debe de introducir un número");
+            }
         } while (nCards <= 0);
 
         //Crea los jugadores con los datos anteriores
