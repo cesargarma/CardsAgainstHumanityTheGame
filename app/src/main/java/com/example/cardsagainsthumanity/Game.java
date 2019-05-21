@@ -1,3 +1,14 @@
+/**
+ * Esta clase es el core del juego
+ * Aqui se muestran las cartas a los jugadores en sus turnos
+ * La carta negra al master al principio de la ronda y cuando le tocaelegir carta blanca ganadora
+ * Tambien indica que jugador ha ganado cuando se ha acabado la ronda final.
+ *
+ * @author Golthork
+ * @author Daasty
+ * @version 1.0
+ */
+
 package com.example.cardsagainsthumanity;
 
 import java.util.Scanner;

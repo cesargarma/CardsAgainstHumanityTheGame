@@ -1,3 +1,11 @@
+/**
+ * La clase main simplemente inicia el juego, especificael numero de rondas que se van a jugar y muestra el nombre del ganador al final
+ *
+ * @author Golthork
+ * @author Daasty
+ * @version 1.0
+ */
+
 package com.example.cardsagainsthumanity;
 
 public class Main {

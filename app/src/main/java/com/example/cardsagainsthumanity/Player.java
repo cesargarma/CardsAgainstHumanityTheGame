@@ -1,3 +1,15 @@
+/**
+ * Constructor de los jugadores
+ * tiene datos preestablecidos para generar jugadores por default
+ * Es una clase "intermediaria" ya que los jugadores una vez son creados como tal,
+ * solo se les incrementa la puntuacion, y se les cambia el rango de master
+ * Por lo que quitando eso, esta clase solo es un "enlaze" entre el juego y las cartas, que son las verdaderas protagonistas
+ *
+ * @author Golthork
+ * @author Daasty
+ * @version 1.0
+ */
+
 package com.example.cardsagainsthumanity;
 
 import com.example.cardsagainsthumanity.Cards;

@@ -1,3 +1,17 @@
+/**
+ * Esta clase inicia el juego
+ * Pide los datos como el numero de jugadores y el numero de cartas
+ * posibilidad de que indique el modo de juego en un futuro
+ * Crea jugadores, les asigna cartas blancas por primera vez
+ * Asigana el rol de master de manera aleatoria por primera vez
+ *
+ * @author Golthork
+ * @author Daasty
+ * @version 1.0
+ *
+ */
+
+
 package com.example.cardsagainsthumanity;
 
 import java.util.Random;
