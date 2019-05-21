@@ -1,3 +1,6 @@
+package com.example.cardsagainsthumanity;
+
+
 /**
  * La clase main simplemente inicia el juego, especificael numero de rondas que se van a jugar y muestra el nombre del ganador al final
  *
@@ -6,7 +9,6 @@
  * @version 1.0
  */
 
-package com.example.cardsagainsthumanity;
 
 public class Main {
     public static void main(String[] args) {

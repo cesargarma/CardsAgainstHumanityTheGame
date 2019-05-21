@@ -1,3 +1,8 @@
+package com.example.cardsagainsthumanity;
+
+import java.util.Random;
+import java.util.Scanner;
+
 /**
  * Esta clase inicia el juego
  * Pide los datos como el numero de jugadores y el numero de cartas
@@ -12,10 +17,7 @@
  */
 
 
-package com.example.cardsagainsthumanity;
 
-import java.util.Random;
-import java.util.Scanner;
 
 public class GameInit {
     public static Player[] players = new Player[8];

@@ -1,3 +1,9 @@
+package com.example.cardsagainsthumanity;
+
+import java.util.Scanner;
+
+import static com.example.cardsagainsthumanity.GameInit.players;
+
 /**
  * Esta clase es el core del juego
  * Aqui se muestran las cartas a los jugadores en sus turnos
@@ -9,11 +15,7 @@
  * @version 1.0
  */
 
-package com.example.cardsagainsthumanity;
 
-import java.util.Scanner;
-
-import static com.example.cardsagainsthumanity.GameInit.players;
 
 public class Game {
 

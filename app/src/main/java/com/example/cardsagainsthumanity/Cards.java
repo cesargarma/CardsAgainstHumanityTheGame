@@ -1,3 +1,7 @@
+package com.example.cardsagainsthumanity;
+
+import java.util.Random;
+
 /**
  * Estaclase es utilizada casi como si fuese una base de datos
  * Almacena dos arrays con los Strings de las cartas blancas y negras
@@ -20,9 +24,7 @@
  * @version 1.0
  */
 
-package com.example.cardsagainsthumanity;
 
-import java.util.Random;
 
 public class Cards {
    private static String[] white = {
@@ -73,6 +75,7 @@ public class Cards {
         white[rng] = "";
         return white2[rng];
    }
+
 
    public static String getBlackCard(){
        int rng = -1;

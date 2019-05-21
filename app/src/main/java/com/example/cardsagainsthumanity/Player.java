@@ -1,3 +1,7 @@
+package com.example.cardsagainsthumanity;
+
+import com.example.cardsagainsthumanity.Cards;
+
 /**
  * Constructor de los jugadores
  * tiene datos preestablecidos para generar jugadores por default
@@ -10,9 +14,7 @@
  * @version 1.0
  */
 
-package com.example.cardsagainsthumanity;
 
-import com.example.cardsagainsthumanity.Cards;
 
 public class Player {
 
