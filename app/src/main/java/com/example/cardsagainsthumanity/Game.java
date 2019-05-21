@@ -53,6 +53,8 @@ public class Game {
         for (int i = 0; i < players.length; i++) {
             if(!players[i].isMaster()){ //Busca jugadores que no sean master para que escojan carta blanca
 
+                int opcion = -1;
+
                 System.out.println();
                 System.out.println("Turno del siguiente jugador: "+players[i].getName());
 
@@ -63,8 +65,19 @@ public class Game {
                 }
 
                 //solicita al jugador que escoja la carta que desea mostrar al master en esa ronda
-                System.out.println("Elige una carta (1-"+players[i].getnCards()+")");
-                int opcion = Integer.parseInt(teclado.nextLine()) - 1;
+                do{
+                    try{
+                        System.out.println("Elige una carta (1-"+players[i].getnCards()+")");
+                        opcion = Integer.parseInt(teclado.nextLine()) - 1;
+
+                        if(opcion < 0 || opcion >= players[0].getnCards()) throw new Exception("El número no es válido.");
+
+                    }catch(NumberFormatException e){
+                        System.out.println("ERROR: Se debe de introducir un número");
+                    }catch (Exception e){
+                        System.out.println("ERROR: "+e.getMessage());
+                    }
+                }while(opcion < 0 || opcion >= players[0].getnCards());
 
                 //almacena la carta elegida en el array whiteCards
                 //solicita una nueva carta blanca para sustituir a la elegida
@@ -79,6 +92,8 @@ public class Game {
     //y se le pide a este que elija una para ser la ganadora de la ronda
     //el jugador que selecciono la carta ganadora gana un punto y se convierte en master
     private static void winner() {
+        int opcion = -1;
+
         System.out.println("\n\nTurno del master: "+players[lookForMaster()].getName());
         System.out.println("Carta negra: \n"+players[lookForMaster()].getBlackCard());
         System.out.println("\n\nElige la carta ganadora (1-"+whiteCards.length+"): ");
@@ -90,8 +105,20 @@ public class Game {
 
         //Solicita que elija una ganadora
         Scanner teclado = new Scanner(System.in);
-        int opcion = Integer.parseInt(teclado.nextLine()) - 1;
-        System.out.println("Carta ganadora: "+whiteCards[opcion]);
+        do{
+            try{
+                opcion = Integer.parseInt(teclado.nextLine()) - 1;
+                System.out.println("Carta ganadora: "+whiteCards[opcion]);
+
+                if(opcion < 0 || opcion >= whiteCards.length) throw new Exception("El número no es válido.");
+
+            }catch(NumberFormatException e){
+                System.out.println("ERROR: Se debe de introducir un número");
+            }catch (Exception e){
+                System.out.println("ERROR: "+e.getMessage());
+            }
+        }while(opcion < 0 || opcion >= whiteCards.length);
+
 
         //Si el turno del master es menor o igual que la opcion elegida, esta opcion, como numero,
         //se debe incrementar en uno para que coincida con el jugador que la seleccionó
