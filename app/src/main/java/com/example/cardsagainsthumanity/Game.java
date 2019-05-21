@@ -144,13 +144,20 @@ public class Game {
 
     public static String getGanador(){
         int score = players[0].getScore();
-        int temp = 0;
+        int temp = -1;
+        boolean draw = false;
+
         for (int i = 1; i < players.length; i++) {
             if(players[i].getScore()>score){
                 score = players[i].getScore();
                 temp = i;
+            }else{
+                if(players[i].getScore() == score) draw = true;
             }
+
         }
-        return players[temp].getName();
+
+        if(draw)    return "\n\nHay un empate técnico.";
+        else        return "\n\nEl ganador es: "+players[temp].getName();
     }
 }
