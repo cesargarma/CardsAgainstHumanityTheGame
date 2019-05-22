@@ -123,12 +123,12 @@ public class Game {
                 opcion = Integer.parseInt(teclado.nextLine()) - 1;
                 System.out.println("Carta ganadora: "+whiteCards[opcion]);
 
-                if(opcion < 0 || opcion >= whiteCards.length) throw new Exception("El número no es válido.");
+                if(opcion < 0 || opcion >= whiteCards.length) throw new Exception();
 
             }catch(NumberFormatException e){
                 System.out.println("ERROR: Se debe de introducir un número");
             }catch (Exception e){
-                System.out.println("ERROR: "+e.getMessage());
+                System.out.println("ERROR: El número no es válido");
             }
         }while(opcion < 0 || opcion >= whiteCards.length);
 
