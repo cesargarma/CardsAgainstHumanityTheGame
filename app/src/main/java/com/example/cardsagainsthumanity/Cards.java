@@ -57,14 +57,6 @@ public class Cards {
    private static String[] black2 = new String[black.length];
 
 
-   public int getWhiteLength(){
-       return white.length;
-   }
-
-   public int getBlackLength(){
-       return black.length;
-   }
-
    public static String getWhiteCard(){
         int rng = -1;
         do{
@@ -73,6 +65,7 @@ public class Cards {
 
         white2[rng] = white[rng];
         white[rng] = "";
+        refillArray(white, white2);
         return white2[rng];
    }
 
@@ -85,11 +78,28 @@ public class Cards {
 
        black2[rng] = black[rng];
        black[rng] = "";
+       refillArray(black,black2);
        return black2[rng];
    }
 
     private static int randomNumber(int rango){
         Random random = new Random();
         return random.nextInt(rango);
+    }
+
+    private static void refillArray(String [] array, String [] array2){
+       boolean sw = true;
+
+        for (int i = 0; i < array.length; i++) {
+            if(array[i] != ""){
+                sw = false;
+                break;
+            }
+        }
+        if(sw){
+            for (int i = 0; i < array.length; i++) {
+                array[i] = array2[i];
+            }
+        }
     }
 }
