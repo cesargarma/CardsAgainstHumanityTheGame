@@ -87,6 +87,13 @@ public class Cards {
         return random.nextInt(rango);
     }
 
+    /**
+     * recibe dos arrays,correspondientes a los dos de cartas blancas o los dos de cartas negras
+     * si en el primer array no quedan cartas, copia el segundo array en el primero
+     *
+     * @param array
+     * @param array2
+     */
     private static void refillArray(String [] array, String [] array2){
        boolean sw = true;
 

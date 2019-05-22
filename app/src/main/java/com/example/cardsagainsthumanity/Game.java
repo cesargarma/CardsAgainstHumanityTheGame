@@ -164,6 +164,7 @@ public class Game {
             if(players[i].getScore()>score){
                 score = players[i].getScore();
                 temp = i;
+                draw = false;
             }else{
                 if(players[i].getScore() == score) draw = true;
             }

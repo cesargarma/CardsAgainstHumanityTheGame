@@ -2,7 +2,9 @@ package com.example.cardsagainsthumanity;
 
 
 /**
- * La clase main simplemente inicia el juego, especificael numero de rondas que se van a jugar y muestra el nombre del ganador al final
+ * La clase main simplemente inicia el juego,
+ * especifica el numero de rondas que se van a jugar
+ * y muestra el nombre del ganador al final
  *
  * @author Golthork
  * @author Daasty
