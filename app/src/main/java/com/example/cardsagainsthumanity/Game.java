@@ -5,9 +5,9 @@ import java.util.Scanner;
 import static com.example.cardsagainsthumanity.GameInit.players;
 
 /**
- * Esta clase es el core del juego
- * Aqui se muestran las cartas a los jugadores en sus turnos
- * La carta negra al master al principio de la ronda y cuando le tocaelegir carta blanca ganadora
+ * Esta clase es el core del juego<br/>
+ * Aqui se muestran las cartas a los jugadores en sus turnos<br/>
+ * La carta negra al master al principio de la ronda y cuando le tocaelegir carta blanca ganadora<br/>
  * Tambien indica que jugador ha ganado cuando se ha acabado la ronda final.
  *
  * @author Golthork
@@ -18,9 +18,19 @@ import static com.example.cardsagainsthumanity.GameInit.players;
 
 
 public class Game {
-
+    /**
+     * Esta variable almacena las cartas blancas seleccionadas durante el turno para enseñarselas al master.
+     */
     public static String[] whiteCards = new String[players.length-1];
 
+    /**
+     * Busca al master de la ronda y lo muestra en pantalla </br>
+     * al jugador con rango de master le adjudica una carta negra aleatoria
+     * se comunica con la clase player para solicitar la carta negra
+     * y de ahi va a la clase Cards para obtenerla
+     * Una vez realizado ese proceso, comienza el juego llamando al metodo play()
+     *
+     */
     public static void start(){
 
         //Busca al master de la ronda y lo muestra en pantalla
@@ -37,8 +47,9 @@ public class Game {
         play();
     }
 
-    //Busca el master entre todos los jugadores
-    //Sale al primer resultado obtenido
+    /**Busca el master entre todos los jugadores.
+     * Sale al primer resultado obtenido
+     */
     private static int lookForMaster(){
         for (int i = 0; i < players.length; i++){
             if(players[i].isMaster()) return i;
@@ -47,18 +58,24 @@ public class Game {
         return -1;
     }
 
-    //El juego como tal
+    /**
+     * Este metodo es el "indice" del juego como tal <br/>
+     * LLamando a los metodos para que los jugadores elijan cartas blancas<br/>
+     * y el master las reciba y elija la ganadora de la ronda.
+     */
     private static void play() {
         chooseWhiteCard();
         winner();
         mostrarDatos();
     }
 
-    //va jugador por jugador
-    //a excepcion del master
-    //muestra las cartas blancas que tienen, les pide que escojan una
-    //la escogida la almacena en un vector para mostrar al master
-    //y la sustituye por una nueva
+    /**
+     * va jugador por jugador<br/>
+     * a excepcion del master<br/>
+     * muestra las cartas blancas que tienen, les pide que escojan una<br/>
+     * la escogida la almacena en un vector para mostrar al master<br/>
+     * y la sustituye por una nueva<br/>
+     */
     private static void chooseWhiteCard() {
         Scanner teclado = new Scanner(System.in);
         int k = 0;
@@ -101,10 +118,13 @@ public class Game {
         }
     }
 
-    //Se le muestran todas las cartas blancas elegidas por los jugadores al master
-    //y se le pide a este que elija una para ser la ganadora de la ronda
-    //el jugador que selecciono la carta ganadora gana un punto y se convierte en master
-    private static void winner() {
+    /**
+     * Se le muestran todas las cartas blancas elegidas por los jugadores al master<br/>
+     * y se le pide a este que elija una para ser la ganadora de la ronda<br/>
+     * el jugador que selecciono la carta ganadora gana un punto y se convierte en master para la siguiente ronda
+     *
+     */
+     private static void winner() {
         int opcion = -1;
 
         System.out.println("\n\nTurno del master: "+players[lookForMaster()].getName());
@@ -155,6 +175,12 @@ public class Game {
         }
     }
 
+    /**
+     * Este método recorre todos los jugadores cuando se ha acabado el juego <br/>
+     * revisa cuantos puntos tiene cada uno, y elige un ganador, en caso de empate, indica que ha habido un empate
+     *
+     * @return  Devuelve un String con el nombre del ganador o si es un empate
+     */
     public static String getGanador(){
         int score = players[0].getScore();
         int temp = -1;

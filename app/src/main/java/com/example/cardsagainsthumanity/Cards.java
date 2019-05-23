@@ -91,8 +91,8 @@ public class Cards {
      * recibe dos arrays,correspondientes a los dos de cartas blancas o los dos de cartas negras
      * si en el primer array no quedan cartas, copia el segundo array en el primero
      *
-     * @param array
-     * @param array2
+     * @param array Array primario, donde empiezan todas las cartas
+     * @param array2    Array secundario, donde se almacenan aquellas cartas ya usadas.
      */
     private static void refillArray(String [] array, String [] array2){
        boolean sw = true;
