@@ -27,6 +27,9 @@ import java.util.Random;
 
 
 public class Cards {
+    /**
+     * Array primario donde se almacenan las cartas blancas al principio
+     */
    private static String[] white = {
             "Aznar",
             "Monaguillos sin dientes",
@@ -46,14 +49,23 @@ public class Cards {
             "Una orgía en la que una persona tiene sida",
             "Su Majestad la Reina Isabel II"};
 
+    /**
+     * Array secundario donde se almacenan las cartas blancas ya jugadas
+     */
    private static String[] white2 = new String[white.length];
 
+    /**
+     * Array primario donde se almacenan las cartas negras al principio
+     */
    private static String[] black = {
             "La recuperación comenzó cuando me uní a un grupo de apoyo de _____",
             "Solo hay dos certezas en la vida: La muerte y _____",
             "Amarte es facil, porque eres _____",
             "La vida de los indios americanos cambió cuando los colonizadores introdujeron _____"};
 
+    /**
+     * Array secundario donde se almacenan las cartas negras ya jugadas
+     */
    private static String[] black2 = new String[black.length];
 
    /**

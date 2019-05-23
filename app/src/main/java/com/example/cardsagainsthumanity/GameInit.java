@@ -4,11 +4,11 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- * Esta clase inicia el juego
- * Pide los datos como el numero de jugadores y el numero de cartas
- * posibilidad de que indique el modo de juego en un futuro
- * Crea jugadores, les asigna cartas blancas por primera vez
- * Asigana el rol de master de manera aleatoria por primera vez
+ * Esta clase inicia el juego<br/>
+ * Pide los datos como el numero de jugadores y el numero de cartas<br/>
+ * posibilidad de que indique el modo de juego en un futuro<br/>
+ * Crea jugadores, les asigna cartas blancas por primera vez<br/>
+ * Asigana el rol de master de manera aleatoria por primera vez<br/>
  *
  * @author Golthork
  * @author Daasty
@@ -22,10 +22,11 @@ import java.util.Scanner;
 public class GameInit {
     public static Player[] players = new Player[8];
 
-    //Inicia el juego,
-    //Primero solicita informacion sobre el nº de jugadores y el nº de cartas deseadas para cada uno
-    //a continuacion crea los jugadores y reparte las cartas
-
+    /**
+     * Inicia el juego<br/>
+     * Primero solicita informacion sobre el nº de jugadores y el nº de cartas deseadas para cada uno<br/>
+     * a continuacion crea los jugadores y reparte las cartas
+     */
     public static void iniciarjuego() {
         Scanner teclado = new Scanner(System.in);
 
@@ -67,9 +68,12 @@ public class GameInit {
         mostrarCartasEnMano(nCards);
     }
 
-    //Sabiendo el numero de cartas que cada jugador debe tener en la mano
-    //Solicita cartas aleatorias para llenar ese array por primera vez
-
+    /**
+     * Sabiendo el numero de cartas que cada jugador debe tener en la mano<br/>
+     * Solicita cartas aleatorias para llenar ese array por primera vez
+     *
+     * @param nCards    Esel numero de cartas que tiene que repartir a cada jugador, es decir, el numero de iteracciones del bucle
+     */
     private static void repartirCartas(int nCards) {
         for (int i = 0; i < nCards; i++) {
             for (int j = 0; j < players.length; j++) {
@@ -82,7 +86,11 @@ public class GameInit {
     }
 
 
-    //Muestra las cartas en mano de cada jugador
+    /**
+     * Muestra las cartas en mano de cada jugador
+     *
+     * @param nCards    Es el numero de cartas en mano de cada jugador, es decir, el numero de iteracciones del bucle.
+     */
     public static void mostrarCartasEnMano(int nCards) {
 
         System.out.print("\n\n¡CARTAS DE CADA JUGADOR!");
@@ -98,7 +106,12 @@ public class GameInit {
     }
 
 
-    //Crea los objetos jugador y los almacena en el array de jugadores
+    /**
+     * Crea los objetos Player y los almacena en un array de objetos para tenerlos controlados
+     *
+     * @param nPlayers  Es el numero de jugadores que se crean
+     * @param nCards    Es el numero de cartas que cada jugador tiene en mano
+     */
     private static void playerCraft(int nPlayers, Scanner teclado, int nCards) {
         players = new Player[nPlayers];
         int rng = randomNumber(nPlayers);
@@ -127,7 +140,9 @@ public class GameInit {
         mostrarDatos();
     }
 
-    //Muestra la informacion de los jugadores
+    /**
+     * Muestra la informacion de los jugadores
+     */
     private static void mostrarDatos() {
         for (int i = 0; i < players.length; i++) {
             System.out.println();
