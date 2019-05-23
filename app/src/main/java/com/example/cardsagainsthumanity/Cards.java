@@ -56,9 +56,15 @@ public class Cards {
 
    private static String[] black2 = new String[black.length];
 
-
+   /**
+    * Metodo usado para solicitar una carta blanca nueva para la mano de los jugadores,
+    * llama al metodo getCards() para no tener redundancia de codigo.
+    *
+    * @return Devuelve el String con el valor de la carta que a su vez le devuelve getCards()
+    * @see #getCards(String[], String[])
+    */
    public static String getWhiteCard(){
-        int rng = -1;
+        /*int rng = -1;
         do{
             rng = randomNumber(white.length);
         }while(white[rng].equals(""));
@@ -66,12 +72,19 @@ public class Cards {
         white2[rng] = white[rng];
         white[rng] = "";
         refillArray(white, white2);
-        return white2[rng];
+        return white2[rng];*/
+       return getCards(white,white2);
    }
 
-
+    /**
+     * Metodo usado para solicitar una carta negra nueva para la mano del master,
+     * llama al metodo getCards() para no tener redundancia de codigo.
+     *
+     * @return Devuelve el String con el valor de la carta que a su vez le devuelve getCards()
+     * @see #getCards(String[], String[])
+     */
    public static String getBlackCard(){
-       int rng = -1;
+      /* int rng = -1;
        do{
            rng = randomNumber(black.length);
        }while(black[rng].equals(""));
@@ -79,7 +92,29 @@ public class Cards {
        black2[rng] = black[rng];
        black[rng] = "";
        refillArray(black,black2);
-       return black2[rng];
+       return black2[rng];*/
+       return getCards(black,black2);
+   }
+
+    /**
+     * Recibe dos arrays, el primario y el secundario. <br/>
+     * Invoca un numero aleatorio, para buscaren esa posicion, la carta blanca en el primer array, si no hay ninguna repite proceso
+     * hasta encontrarla, una vez hecho, copia esa carta en la misma posicion del segundo array y lo vacia en el primario<br/>
+     * es ese valor el que devuelve
+     * @param array Array primario, donde empiezan todas las cartas
+     * @param array2    Array secundario, donde acaban todas las cartas
+     * @return  Valor de la carta (String) que ha solicitado el jugador.
+     */
+   public static String getCards(String [] array, String [] array2){
+       int rng = -1;
+       do{
+           rng = randomNumber(array.length);
+       }while(array[rng].equals(""));
+
+       array2[rng] = array[rng];
+       array[rng] = "";
+       refillArray(array,array2);
+       return array2[rng];
    }
 
     private static int randomNumber(int rango){
